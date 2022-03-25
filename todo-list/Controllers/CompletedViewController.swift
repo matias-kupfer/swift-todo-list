@@ -98,6 +98,7 @@ extension CompletedViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic);
             completionHandler(true)
         })
+        complete.image = UIImage(systemName: "text.badge.checkmark")
         complete.backgroundColor = .systemGreen
         
         let swipe = UISwipeActionsConfiguration(actions: [complete])
@@ -112,6 +113,7 @@ extension CompletedViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic);
             completionHandler(true)
         })
+        delete.image = UIImage(systemName: "trash")
         
         let swipe = UISwipeActionsConfiguration(actions: [delete])
         return swipe

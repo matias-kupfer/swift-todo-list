@@ -18,9 +18,10 @@ class TaskTableViewCell: UITableViewCell {
         return label
     }()
     
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
+        
         contentView.addSubview(task)
         applyConstraints()
     }
@@ -39,7 +40,11 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     public func configure(with model: TaskModelCoreData) {
-        task.text = model.title
+        let labelValue = NSMutableAttributedString(string: model.title!)
+        if(model.is_completed) {
+            labelValue.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSRange(location: 0, length: labelValue.length))
+        }
+        task.attributedText = labelValue
     }
     
 }

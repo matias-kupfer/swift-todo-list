@@ -34,7 +34,7 @@ class AddTaskViewController: UIViewController {
         var button = UIBarButtonItem()
         button.title = "Cancel"
         button.style = UIBarButtonItem.Style.plain
-        button.action = nil
+        button.action = #selector(dismissModal(_:))
         button.tintColor = .red
         return button
     }()
@@ -85,6 +85,10 @@ class AddTaskViewController: UIViewController {
     
     @objc private func onUserDidType(_ textField: UITextField) {
         self.rightBarButtonItem.isEnabled = textField.text != ""
+    }
+    
+    @objc private func dismissModal(_: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
     @objc private func onSaveTask(_: UIBarButtonItem) {

@@ -19,7 +19,7 @@ class MainTabBarViewController: UITabBarController {
         let vc1 = UINavigationController(rootViewController: TasksViewController())
         let vc2 = UINavigationController(rootViewController: CompletedViewController())
         
-        vc1.tabBarItem.image = UIImage(systemName: "list.bullet")
+        vc1.tabBarItem.image = UIImage(systemName: "checklist")
         vc2.tabBarItem.image = UIImage(systemName: "checkmark.circle")
         
         vc1.title = "To do"

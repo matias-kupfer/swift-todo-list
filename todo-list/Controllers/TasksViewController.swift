@@ -111,7 +111,8 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
             completionHandler(true)
         })
         complete.backgroundColor = .systemGreen
-        
+        complete.image = UIImage(systemName: "checkmark")
+
         let swipe = UISwipeActionsConfiguration(actions: [complete])
         return swipe
         
@@ -124,6 +125,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic);
             completionHandler(true)
         })
+        delete.image = UIImage(systemName: "trash")
         
         let swipe = UISwipeActionsConfiguration(actions: [delete])
         return swipe
